@@ -1,3 +1,4 @@
+//Write a program that uses the multiplication operator, *, to print the product
 #include<iostream>
 int main(){ 
     int numOne , numTwo;
