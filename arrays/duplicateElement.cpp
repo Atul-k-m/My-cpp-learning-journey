@@ -1,23 +1,27 @@
-#include<iostream>
-int duplicate(int arr[],int size,int answer){
-    for(int i = 0 ; i<size; i++){
-        answer = answer^arr[i];
+#include <iostream>
+#include <vector>
+
+int findDuplicate(const std::vector<int>& arr) {
+    int answer = 0;
+    for (int i = 0; i < arr.size(); i++) {
+        answer = answer ^ arr[i];
     }
-    for(int i = 1 ; i<size;i++){
-           answer = answer^arr[i];
-        }
-        return answer;
+    return answer;
 }
-int main(){
-    int size,answer=0 ;
+
+int main() {
+    int size;
     std::cout << "Enter the number of elements in the array: ";
     std::cin >> size;
-    int arr[size];
+    std::vector<int> arr(size);
 
     std::cout << "Enter the elements of the array: ";
     for (int i = 0; i < size; i++) {
         std::cin >> arr[i];
     }
-    answer=duplicate(arr,size,answer);
-    std::cout<<answer;
+    int duplicateValue = findDuplicate(arr);
+    std::cout << "Duplicate element is: " << duplicateValue << std::endl;
+
+    return 0;
 }
+
